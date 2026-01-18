@@ -17,6 +17,8 @@ Currently only Atom, but we might add RSS in the future if there's demand.
 
 ## Usage
 
+Put this e.g. in `routes/feed.xml.server.ts`:
+
 ```ts
 import { atomResponse } from "@mastrojs/feed";
 import { html } from "@mastrojs/mastro";
@@ -43,4 +45,10 @@ export const GET = () => {
 }
 ```
 
-To see all functions `@mastrojs/feed` exports, see its [API docs](https://jsr.io/@mastrojs/feed/doc).
+And don't forget to advertise your feed from your HTML page. For example:
+
+```html
+<link rel="alternate" type="application/atom+xml" href="/feed.xml">
+```
+
+To learn more, see the `@mastrojs/feed` [API docs](https://jsr.io/@mastrojs/feed/doc).
