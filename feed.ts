@@ -58,7 +58,7 @@ interface AtomAuthor {
  *
  * Validate your output with the [feed validator](https://validator.w3.org/feed/).
  */
-export const atomResponse = async (feed: AtomFeed): Promise<Response> => {
+export const atomResponse = (feed: AtomFeed): Response => {
   const node = html`<?xml version="1.0" encoding="utf-8"?>
     <feed xmlns="http://www.w3.org/2005/Atom">
       <title>${feed.title}</title>
@@ -73,7 +73,7 @@ export const atomResponse = async (feed: AtomFeed): Promise<Response> => {
       ${feed.entries.map(renderEntry)}
     </feed>
   `;
-  const res = await htmlToResponse(node);
+  const res = htmlToResponse(node);
   res.headers.set("Content-Type", "application/atom+xml");
   return res;
 }
