@@ -1,15 +1,8 @@
 {
   "name": "@mastrojs/feed",
-  "version": "0.0.1",
-  "fmt": {
-    "lineWidth": 90
-  },
+  "version": "0.0.2",
   "exports": {
-    ".": "./feed.ts"
-  },
-  "imports": {
-    "@mastrojs/mastro": "jsr:@mastrojs/mastro@0",
-    "@std/assert": "jsr:@std/assert@^1.0.15"
-  },
-  "lock": false
+    ".": "./index.ts"
+  }
 }
+
